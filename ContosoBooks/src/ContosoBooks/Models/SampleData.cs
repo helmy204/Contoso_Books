@@ -1,6 +1,6 @@
 ﻿using Microsoft.Data.Entity.Storage;
 using Microsoft.Data.Entity;
-using Microsoft.Framework.DependencyInjection;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +12,9 @@ namespace ContosoBooks.Models
     {
         public static void Initialize(IServiceProvider serviceProvider)
         {
-            var context = serviceProvider.GetService<BookContext>();
+            var context = (BookContext)serviceProvider.GetService(typeof(BookContext));
 
-            if (serviceProvider.GetServices<IRelationalDatabaseCreator>().Count() > 0)
+            if (serviceProvider.GetService(typeof(IRelationalDatabaseCreator)) != null)
             {
                 if (!context.Books.Any())
                 {
