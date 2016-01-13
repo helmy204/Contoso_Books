@@ -1,0 +1,25 @@
+
+D:\Work\ContosoBooks\Contoso_Books\ContosoBooks\src\ContosoBooks>dnvm use 1.0.0-
+rc1-update1
+Adding C:\Users\ahmed.helmy\.dnx\runtimes\dnx-clr-win-x86.1.0.0-rc1-update1\bin
+to process PATH
+
+D:\Work\ContosoBooks\Contoso_Books\ContosoBooks\src\ContosoBooks>dnx ef migratio
+ns add Initial
+System.InvalidOperationException: The name 'Initial' is used by an existing migr
+ation.
+   at Microsoft.Data.Entity.Migrations.Design.MigrationsScaffolder.ScaffoldMigra
+tion(String migrationName, String rootNamespace, String subNamespace)
+   at Microsoft.Data.Entity.Design.MigrationsOperations.AddMigration(String name
+, String outputDir, String contextType)
+   at Microsoft.Data.Entity.Commands.Program.Executor.<>c__DisplayClass6_0.<AddM
+igration>b__0()
+   at Microsoft.Data.Entity.Commands.Program.Executor.Execute(Action action)
+The name 'Initial' is used by an existing migration.
+
+D:\Work\ContosoBooks\Contoso_Books\ContosoBooks\src\ContosoBooks>dnx ef database
+ update
+Applying migration '20160112080839_Initial'.
+Done.
+
+D:\Work\ContosoBooks\Contoso_Books\ContosoBooks\src\ContosoBooks>
